@@ -359,9 +359,9 @@
                             </a>
                         </li>
                     </ul>
-                </li> 
+                </li> --}}
                 
-                <!-- marketing -->
+                {{-- <!-- marketing -->
                 @if(Auth::user()->user_type == 'admin' || in_array('11', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -688,7 +688,7 @@
 
                 <!-- Setup & Configurations -->
                 @if(Auth::user()->user_type == 'admin' || in_array('14', json_decode(Auth::user()->staff->role->permissions)))
-                  {{-- <li class="aiz-side-nav-item">
+                  <li class="aiz-side-nav-item">
                     <a href="#" class="aiz-side-nav-link">
                         <i class="las la-dharmachakra aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{translate('Setup & Configurations')}}</span>
@@ -803,7 +803,7 @@
                         </li>
                         
                     </ul>
-                </li> --}}
+                </li>
                 @endif
 
 

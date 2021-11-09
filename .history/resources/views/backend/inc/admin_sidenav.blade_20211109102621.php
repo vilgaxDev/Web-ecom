@@ -285,16 +285,16 @@
                     </li>
                 @endif
 
-                <li class="aiz-side-nav-item">
+                {{-- <li class="aiz-side-nav-item">
                     <a href="{{ route('uploaded-files.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['uploaded-files.create'])}}">
                         <i class="las la-folder-open aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{ translate('Uploaded Files') }}</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <!-- Reports -->
                 @if(Auth::user()->user_type == 'admin' || in_array('10', json_decode(Auth::user()->staff->role->permissions)))
-                     <li class="aiz-side-nav-item">
+                    {{-- <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-file-alt aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Reports') }}</span>
@@ -337,11 +337,11 @@
                                 </a>
                             </li>
                         </ul>
-                    </li> 
+                    </li> --}}
                 @endif
                 
                 <!--Blog System-->
-                 <li class="aiz-side-nav-item">
+                {{-- <li class="aiz-side-nav-item">
                     <a href="#" class="aiz-side-nav-link">
                         <i class="las la-bullhorn aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{ translate('Blog System') }}</span>
@@ -359,9 +359,9 @@
                             </a>
                         </li>
                     </ul>
-                </li> 
+                </li> --}}
                 
-                <!-- marketing -->
+                {{-- <!-- marketing -->
                 @if(Auth::user()->user_type == 'admin' || in_array('11', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -688,7 +688,7 @@
 
                 <!-- Setup & Configurations -->
                 @if(Auth::user()->user_type == 'admin' || in_array('14', json_decode(Auth::user()->staff->role->permissions)))
-                  {{-- <li class="aiz-side-nav-item">
+                  <li class="aiz-side-nav-item">
                     <a href="#" class="aiz-side-nav-link">
                         <i class="las la-dharmachakra aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{translate('Setup & Configurations')}}</span>
@@ -803,7 +803,7 @@
                         </li>
                         
                     </ul>
-                </li> --}}
+                </li>
                 @endif
 
 

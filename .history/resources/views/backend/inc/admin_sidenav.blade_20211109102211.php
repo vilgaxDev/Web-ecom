@@ -83,7 +83,7 @@
                                     </a>
                                 </li>
      8                       @endif
-                            <li class="aiz-side-nav-item">
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{route('digitalproducts.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['digitalproducts.index', 'digitalproducts.create', 'digitalproducts.edit']) }}">
                                     <span class="aiz-side-nav-text">{{ translate('Digital Products') }}</span>
                                 </a>
@@ -93,11 +93,11 @@
                                     <span class="aiz-side-nav-text">{{ translate('Bulk Import') }}</span>
                                 </a>
                             </li> --}}
-                            { <li class="aiz-side-nav-item">
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{route('product_bulk_export.index')}}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{translate('Bulk Export')}}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="aiz-side-nav-item">
                                 <a href="{{route('categories.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['categories.index', 'categories.create', 'categories.edit'])}}">
                                     <span class="aiz-side-nav-text">{{translate('Category')}}</span>
@@ -107,7 +107,7 @@
                                 <a href="{{route('brands.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['brands.index', 'brands.create', 'brands.edit'])}}" >
                                     <span class="aiz-side-nav-text">{{translate('Brand')}}</span>
                                 </a>
-                             </li>
+                            {{-- </li>
                             <li class="aiz-side-nav-item">
                                 <a href="{{route('attributes.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['attributes.index','attributes.create','attributes.edit'])}}">
                                     <span class="aiz-side-nav-text">{{translate('Attribute')}}</span>
@@ -117,7 +117,7 @@
                                 <a href="{{route('reviews.index')}}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{translate('Product Reviews')}}</span>
                                 </a>
-                            </li> 
+                            </li> --}} 
                         </ul>
                     </li>
                 @endif
@@ -204,29 +204,29 @@
 
                 <!-- Customers -->
                 @if(Auth::user()->user_type == 'admin' || in_array('8', json_decode(Auth::user()->staff->role->permissions)))
-                    <li class="aiz-side-nav-item">
+                    {{-- <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-user-friends aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Customers') }}</span>
                             <span class="aiz-side-nav-arrow"></span>
                         </a>
-                        <ul class="aiz-side-nav-list level-2"> 
-                             <li class="aiz-side-nav-item">
+                        <ul class="aiz-side-nav-list level-2"> --}}
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{ route('customers.index') }}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{ translate('Customer list') }}</span>
                                 </a>
-                            </li> 
+                            </li> --}}
                             @if(\App\BusinessSetting::where('type', 'classified_product')->first()->value == 1)
-                             <li class="aiz-side-nav-item">
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{route('classified_products')}}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{translate('Classified Products')}}</span>
                                 </a>
-                            </li> 
-                             <li class="aiz-side-nav-item">
+                            </li> --}}
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{ route('customer_packages.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['customer_packages.index', 'customer_packages.create', 'customer_packages.edit'])}}">
                                     <span class="aiz-side-nav-text">{{ translate('Classified Packages') }}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             @endif
                         </ul>
                     </li>
@@ -234,7 +234,7 @@
 
                 <!-- Sellers -->
                 @if((Auth::user()->user_type == 'admin' || in_array('9', json_decode(Auth::user()->staff->role->permissions))) && \App\BusinessSetting::where('type', 'vendor_system_activation')->first()->value == 1)
-                     <li class="aiz-side-nav-item">
+                    {{-- <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-user aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Sellers') }}</span>
@@ -264,37 +264,37 @@
                                 <a href="{{ route('business_settings.vendor_commission') }}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{ translate('Seller Commission') }}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             
                             @if (\App\Addon::where('unique_identifier', 'seller_subscription')->first() != null && \App\Addon::where('unique_identifier', 'seller_subscription')->first()->activated)
-                                 <li class="aiz-side-nav-item">
+                                {{-- <li class="aiz-side-nav-item">
                                     <a href="{{ route('seller_packages.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seller_packages.index', 'seller_packages.create', 'seller_packages.edit'])}}">
                                         <span class="aiz-side-nav-text">{{ translate('Seller Packages') }}</span>
                                       @if (env("DEMO_MODE") == "On")
                                         <span class="badge badge-inline badge-danger">Addon</span>
                                         @endif
                                     </a>
-                                </li>
+                                </li> --}}
                             @endif
-                            <li class="aiz-side-nav-item">
+                            {{-- <li class="aiz-side-nav-item">
                                 <a href="{{ route('seller_verification_form.index') }}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{ translate('Seller Verification Form') }}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </li>
                 @endif
 
-                <li class="aiz-side-nav-item">
+                {{-- <li class="aiz-side-nav-item">
                     <a href="{{ route('uploaded-files.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['uploaded-files.create'])}}">
                         <i class="las la-folder-open aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{ translate('Uploaded Files') }}</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <!-- Reports -->
                 @if(Auth::user()->user_type == 'admin' || in_array('10', json_decode(Auth::user()->staff->role->permissions)))
-                     <li class="aiz-side-nav-item">
+                    {{-- <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-file-alt aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Reports') }}</span>
@@ -337,11 +337,11 @@
                                 </a>
                             </li>
                         </ul>
-                    </li> 
+                    </li> --}}
                 @endif
                 
                 <!--Blog System-->
-                 <li class="aiz-side-nav-item">
+                {{-- <li class="aiz-side-nav-item">
                     <a href="#" class="aiz-side-nav-link">
                         <i class="las la-bullhorn aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{ translate('Blog System') }}</span>
@@ -359,9 +359,9 @@
                             </a>
                         </li>
                     </ul>
-                </li> 
+                </li> --}}
                 
-                <!-- marketing -->
+                {{-- <!-- marketing -->
                 @if(Auth::user()->user_type == 'admin' || in_array('11', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -688,7 +688,7 @@
 
                 <!-- Setup & Configurations -->
                 @if(Auth::user()->user_type == 'admin' || in_array('14', json_decode(Auth::user()->staff->role->permissions)))
-                  {{-- <li class="aiz-side-nav-item">
+                  <li class="aiz-side-nav-item">
                     <a href="#" class="aiz-side-nav-link">
                         <i class="las la-dharmachakra aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">{{translate('Setup & Configurations')}}</span>
@@ -803,7 +803,7 @@
                         </li>
                         
                     </ul>
-                </li> --}}
+                </li>
                 @endif
 
 

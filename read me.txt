@@ -1,0 +1,9 @@
+● Extract the zip file in that directory.
+● Create a new database from your server MySQL database.
+● Create a DB user to the database and link that database to the DB user.
+
+run the project.
+
+login details 
+user email: ken.vilgax@gmail.com
+password 123456
